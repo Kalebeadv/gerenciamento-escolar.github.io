@@ -1,6 +1,6 @@
 import { Users } from "./users.js"
 
-class Employee extends Users {
+class Employees extends Users {
     constructor(id, user_id, name, bith_date, sex, type_of_employee, cpf, status) {
         super(user_id, name, bith_date, sex);
         this.id = id;
@@ -9,8 +9,13 @@ class Employee extends Users {
         this.status = status;
     }
 
-    getBirth_day() {
-        window.alert(this.bith_date);
+    registration()
+    {
+
+    }
+    display_report()
+    {
+        
     }
 }
 
@@ -38,29 +43,3 @@ function show_birthdays()
 {
     
 }
-
-function fetchIssues () {
-    var issues = JSON.parse(localStorage.getItem('issues'));
-    var issuesList = document.getElementById('issuesList');
-    
-    issuesList.innerHTML = '';
-    
-    for (var i = 0; i < issues.length; i++) {
-      var id = issues[i].id;
-      var desc = issues[i].description;
-      var severity = issues[i].severity;
-      var assignedTo = issues[i].assignedTo;
-      var status = issues[i].status;
-      
-      issuesList.innerHTML +=   '<div class="well">'+
-                                '<h6>Issue ID: ' + id + '</h6>'+
-                                '<p><span class="label label-info">' + status + '</span></p>'+
-                                '<h3>' + desc + '</h3>'+
-                                '<p><span class="glyphicon glyphicon-time"></span> ' + severity + ' '+
-                                '<span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>'+
-                                '<a href="#" class="btn btn-warning" onclick="setStatusClosed(\''+id+'\')">Close</a> '+
-                                '<a href="#" class="btn btn-danger" onclick="deleteIssue(\''+id+'\')">Delete</a>'+
-                                '</div>';
-    }
-  }
-
