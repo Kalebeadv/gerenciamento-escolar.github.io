@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employers</title>
 </head>
+
 <body>
-    <div>
-        <h2>Registration employee</h2>
+    <header>
+        <h1>Employees</h1>
+        <hr>
+    </header>
+    <main>
         <div>
-            <form action="">
-            <label for="id">ID:</label>
-            <input type="text" name="id_employee" id="id">
-            <br>
-            <label for="user_id">User ID:</label>
-            <input type="text" id="user_id" name="user_id_employee">
-            <br>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name_employee">
-            <br>
-            <label for="bith_date">Bith date:</label>
-            <input type="text" name="bith_date_employee" id="bith_date">
-            <br>
-            <label for="sex">Sex:</label>
-            <input type="text" name="sex_employee" id="sex">
-            <br>
-            <label for="type">Type of employee:</label>
-            <input type="text" name="type_of_employee" id="type">
-            <br>
-            <label for="cpf">CPF:</label>
-            <input type="text" name="cpf_employee" id="cpf">
-            <br>
-            <label for="status">Status:</label>
-            <input type="text" name="status_employee" id="status">
-            <br>
-            <button type="submit" id="button_registration">Enter</button>
-            </form>
-        </div>
-        <div>
-            <h2>Show reports</h2>
+            <h2>Registration employee</h2>
             <div>
-                <h3>Birthday</h3>
                 <form action="">
-                    <label for="button_birth_day"></label>
-                    <button type="submit" id="button_birth_day">Show birthdays</button>
-                </form> 
+                    <label for="id">ID:</label>
+                    <input type="text" name="id_employee" id="id">
+                    <br>
+                    <label for="user_id">User ID:</label>
+                    <input type="text" id="user_id" name="user_id_employee">
+                    <br>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name_employee">
+                    <br>
+                    <label for="bith_date">Bith date:</label>
+                    <input type="text" name="bith_date_employee" id="bith_date">
+                    <br>
+                    <label for="sex">Sex:</label>
+                    <input type="text" name="sex_employee" id="sex">
+                    <br>
+                    <label for="type">Type of employee:</label>
+                    <input type="text" name="type_of_employee" id="type">
+                    <br>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" name="cpf_employee" id="cpf">
+                    <br>
+                    <label for="status">Status:</label>
+                    <input type="text" name="status_employee" id="status">
+                    <br>
+                    <button type="submit" id="button_registration">Enter</button>
+                    <hr>
+                </form>
             </div>
             <div>
-                <h3>Employees registers</h3>
+                <div class="employee_birthday">
+                    <h3>BirthDays</h3>
+                    <form action="">
+                        <label for="button_employee_birthday"></label>
+                        <button type="submit" id="button_employee_birthday">Show birthdays</button>
+                    </form>
+                </div>
                 <div>
-                    <label for="employee_registers"></label>
-                    <button type="submit" id="employee_registers">Employee registers</button>
+                    <hr>
+                    <h3>Employees registers</h3>
+                    <div>
+                        <label for="employee_registers"></label>
+                        <button type="submit" id="employee_registers">Employee registers</button>
+                        <hr>
+                    </div>
                 </div>
             </div>
+
         </div>
-        
-    </div>
+    </main>
     <script src="../js/employees.js" type="module"></script>
 </body>
+
 </html>
