@@ -11,7 +11,6 @@ export class Employees extends Users {
 
 }
 
-export const employees_guard = [employ1,employ2,employ3,employ4];
 let button_registration = document.getElementById("button_registration");
 let button_show_birthdays = document.getElementById("button_employee_birthday");
 
@@ -32,7 +31,8 @@ var employ4 = new Employees(sessionStorage.getItem("id"),
     sessionStorage.getItem("cpf"),
     sessionStorage.getItem("status"));
 
-    console.log("nome:" + employ4.name);
+    
+export const employees_guard = [employ1,employ2,employ3,employ4];
 
 function registration() {
     sessionStorage.setItem("id", document.getElementById("id").value);
