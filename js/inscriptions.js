@@ -23,15 +23,15 @@ class Inscriptions
     }
 }
 
-var inscription1 = new Inscriptions("1",courses_guard[0].id,matters_guard[0].id,students_guard[0].id,
+var inscription1 = new Inscriptions("1",courses_guard[0].id,matters_guard[0].id,"1",
     notes_guard[0].id);
-var inscription2 = new Inscriptions("2",courses_guard[1].id,matters_guard[1].id,students_guard[1].id,
+var inscription2 = new Inscriptions("2",courses_guard[1].id,matters_guard[1].id,"2",
 notes_guard[1].id);
 
-var inscription3 = new Inscriptions("3",courses_guard[2].id,matters_guard[2].id,students_guard[2].id,
+var inscription3 = new Inscriptions("3",courses_guard[2].id,matters_guard[2].id,"3",
 notes_guard[1].id);
 
-var inscription4 = new Inscriptions("4",courses_guard[3].id,matters_guard[3].id,students_guard[3].id,
+var inscription4 = new Inscriptions("4",courses_guard[3].id,matters_guard[3].id,"4",
 notes_guard[1].id);
 
 export const inscriptions_guard = [inscription1,inscription2,inscription3,inscription4];

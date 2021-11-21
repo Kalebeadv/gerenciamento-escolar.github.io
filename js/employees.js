@@ -38,6 +38,7 @@ button_teacher_report.addEventListener("click", show_teacher_registers);
 button_coordinador_report.addEventListener("click", show_coordinator_registers);
 button_admin_report.addEventListener("click", show_administrator_registers);
 button_birth_day.addEventListener("click", show_birth_days);
+let hr = "\n___________________\n";
 
 function register_employees() {
     for (let i = 0; i < atribute_array.length; i++) 
@@ -96,7 +97,47 @@ function show_birth_days()
     let birthdays = "";
     for(let i = 0; i < employees_guard.length; i++)
     {
-        birthdays += employees_guard[i].name + " " + employees_guard[i].bith_date +"\n"; 
+        let date = "" + employees_guard[i].bith_date;
+        let splitao = date.split("/");
+        console.log(splitao[1]);
+        switch(splitao[1]) 
+        {
+            case "01" : birthdays += "January\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+            case "02" : birthdays += "February\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "03" : birthdays += "March\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "04" : birthdays += "April\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "05" : birthdays += "May\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "06" : birthdays += "June\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "07" : birthdays += "July\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "08" : birthdays += "August\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "09" : birthdays += "September\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "10" : birthdays += "October\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "11" : birthdays += "November\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "12" : birthdays += "December\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+        }
     }
     window.alert(birthdays);
 }
