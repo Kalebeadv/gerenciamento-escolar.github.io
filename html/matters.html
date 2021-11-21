@@ -13,53 +13,25 @@
         <h1>Matters</h1>
     </header>
     <main>
+        <div >
+            <form action>
+                <label for="id">ID:</label>
+                <input type="text" id="id">
+                <br>
+                <label for="name">Matter name:</label>
+                <input type="text" id="name">
+                <br>
+                <label for="description">Description:</label>
+                <input type="text" id="description">
+                <br>
+                <button type="submit" id="matter_register_class">Enter</button>
+        </div>
         <div>
-            <hr>
-            <div class="history">
-                <h3>History</h3>
-                <p>number of students registered:</p><p class="number_history"></p> 
-                <div>
-                    <p>Student and notes:</p>
-                    <p id= "student_history"></p>
-                    <p id="note_history"></p>
-                </div>     
-            </div>
-            <hr>
-            <div class="mathematics">
-                <h3>Mathematics</h3>
-                <p>number of students registered:</p><p class="number_mathematics"></p>  
-                <div>
-                    <p>Student and notes:</p>
-                    <p id= "student_mathematics"></p>
-                    <p id="note_mathematics"></p>
-                </div>
-                                 
-            </div>
-            <hr>
-            <div class="geography">
-                <h3>Geography</h3>
-                <p>number of students registered:</p><p class="number_geography"></p>
-                <div>
-                    <p>Student and notes:</p>
-                    <p id= "student_geography"></p>
-                    <p id="note_geography"></p>
-                </div>     
-            </div>
-            <hr>
-            <div class="english">
-                <h3>English</h3>
-                <p>number of students registered:</p><p class="number_english"></p> 
-                <div>
-                    <p>Student and notes:</p>
-                    <p id= "student_english"></p>
-                    <p id="note_english"></p>
-                </div>    
-            </div>
+            <h2>Reports</h2>
+            <button type="button" id="quantity_students">Show Students</button>
         </div>
     </main>
-<script src="../js/inscriptions.js" type="module"></script>
-<script src="../js/students.js" type="module"></script>
-<script src="../js/notes.js" type="module"></script>
+<script src="../js/matters.js" type="module"></script>
 </body>
 
 </html>
