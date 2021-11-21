@@ -1,3 +1,4 @@
+import {notes_guard} from "./notes.js"
 class Matters {
     constructor(id, name, description) {
         this.id = id;
@@ -42,7 +43,7 @@ var geography = new Matters("2", "Geography", "the study of the world, its physi
 var english = new Matters();
 
 let button = document.getElementById("matter_register_class");
- button.addEventListener("click",function()
+button.addEventListener("click",function()
  {
      localStorage.setItem("id", document.getElementById("id").value);
      localStorage.setItem("name", document.getElementById("name").value);
@@ -52,5 +53,20 @@ let button = document.getElementById("matter_register_class");
      console.log(localStorage.getItem("id") + localStorage.getItem("name") +
      localStorage.getItem("description"));
  });
+
+ let button2 = document.getElementById("quantity_students");
+ button2.addEventListener("click", function(){
+    let text = "";
+    let count = 0;
+    for(let i = 0; i < notes_guard.length; i++)
+    {
+        count++;
+        text += "first assessment: " +notes_guard[i].first_assessment + "\n" +
+        "second assessment: "+notes_guard[i].second_assessment + "\n";
+    }
+    window.alert(text += "Quantity of students: " + count); 
+ });
+
+
 
 
