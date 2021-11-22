@@ -33,7 +33,35 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 ### Diagramas de caso de uso
 ![Sistema escolar - trabalho do ED](https://user-images.githubusercontent.com/62080789/142790807-83a0145c-63df-4b3f-acbb-c095025aec70.png)
-
+##
 |Caso de uso: cadastrar-se|
 |---|
 |Resumo: o funcionário podera se cadastrado, esse funcionário poderá ser: professor, coodenador ou gerente.|
+##
+|Caso de uso: exbir quantidade de alunos|
+|---|
+|Resumo: As disciplinas poderao exibir a quantidade de alunos cadastrados|
+##
+|Caso de uso: exibir as notas dos alunos|
+|---|
+|Resumo: as disciplinas poderam exibir as notas dos alunos|
+##
+|Caso de uso: exibir se o aluno foi aprovado ou não|
+|---|
+|Resumo: o sistema podera exibir se o aluno foi aprovado ou não|
+##
+|Caso de uso: exibir relátorio de alunos por disciplina|
+|---|
+|Resumo: o sistema poderá exibir os relátorios dos alunos divido podido por disciplina|
+##
+|Caso de uso: exibir relátorio de funcionário|
+|---|
+|Resumo: o sistema poderá exibir relátorios dos funcionarios, sendo eles, professores,coodenadores, ou adimistradores|
+##
+|Caso de uso: exibir relátorio de disciplina por curso|
+|---|
+|Resumo: o sistema poderá exivir o relátorios das disciplinas contidas em cada curso|
+
+|Caso de uso: exibir reátorio dos aniversáriantes do mês|
+|---|
+|Resumo: o sistema poderá exibir o relátorio dos aniverariantes de cada mes |
