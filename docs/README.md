@@ -70,7 +70,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 # Implementação 
 
-# Classe user
+## Classe users
 
 ```
 export class Users
@@ -529,6 +529,99 @@ function show_birth_days()
     window.alert(birthdays);
 }
 ```
+
+# Classe students
+
+A classe _students_ é responsável por gerenciar os alunos, essa classe estende _users_, desta forma adquirindo seus atributos. Além disso, ela possui acesso aos _arrays_ de objetos das classes: _notes, matters_ e _inscriptions_.
+
+```
+import { Users } from "./users.js";
+import { notes_guard } from "./notes.js";
+import { matters_guard } from "./matters.js"; 
+import { inscriptions_guard } from "./inscriptions.js"
+export class Students extends Users
+{
+    constructor(id,user_id,name,bith_date,sex)
+    {
+        super(user_id,name,bith_date,sex);
+        this.id = id;
+    }
+}
+//...
+```
+## Funcoes 
+
+### function register_students
+
+Esta função é bem parecida com a função _register_employees_ da classe _employees_, porém sua diferença é nos itens que ela percorre, enquanto a função vista a cima perceorre um arranjo de funcionários, está percorre um de estudantes. 
+```
+//...
+function register_students()
+{
+    for(let i = 0; i < atribute_array.length; i++)
+    {
+        if(document.getElementById(atribute_array[i]).value == null)
+        {
+            sessionStorage.setItem(atribute_array[i],element_array[i]);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+        else
+        {
+            sessionStorage.setItem(atribute_array[i], document.getElementById(atribute_array[i]).value);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+    }
+}
+//...
+```
+#### function show_students_registers
+
+Como o próprio nome sugere, esta _function_ mostra os estudantes cadastrados.
+```
+//...
+function show_students_registers()
+{
+    let student_registers = "";
+    for(let i = 0; i < students_guard.length; i++)
+    {
+        student_registers += "Name: " +students_guard[i].name + " ID: "+ students_guard[i].id + hr; 
+    }
+    window.alert(student_registers);
+}
+//...
+```
+Primeiramente precisamos criar uma variável do tipo _string_ que irá armazenar os registros dos alunos, ela se chamará _student_registers_.
+```
+//...
+let student_registers = "";
+//...
+```
+Agora chegamos na parte principal da funcao, um laço _for_ que percorre o _array_ de objetos chamado _students_guard_.
+
+```
+//...
+for(let i = 0; i < students_guard.length; i++)
+    {
+        //implementacao 
+    }
+//...
+```
+Dentro deste laço a variavel local _student_registers_ soma e adiciona uma _string_ contendo o atributo nome do estudante em um objeto dentro do _array_, assim como o _ID_ do estudante. Após finalizar o laço com todos os registros o _students_registers_ é mostrado ao usuário atrávés de um _window.alert_.
+
+```
+//...
+for(let i = 0; i < students_guard.length; i++)
+    {
+        student_registers += "Name: " +students_guard[i].name + " ID: "+ students_guard[i].id + hr; 
+    }
+    window.alert(student_registers);
+//...
+```
+
+
+
+
+
 
 
 
