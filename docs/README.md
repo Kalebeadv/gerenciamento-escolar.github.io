@@ -34,49 +34,35 @@ coordenador de curso e professor) e de disciplinas por curso.
 ## Diagramas de caso de uso
 ![Sistema escolar - trabalho do ED](https://user-images.githubusercontent.com/62080789/142790807-83a0145c-63df-4b3f-acbb-c095025aec70.png)
 
-#### 1)
+### Descrição simples dos casos de uso
 
 |Caso de uso: cadastrar-se|
 |:----|
 |Resumo: o funcionário poderá ser cadastrado, esse funcionário poderá ser: professor, coordenador ou gerente.|
 
-#### 2)
-
 |Caso de uso: exibir quantidade de alunos|
 |-----|
 |Resumo: As disciplinas poderão exibir a quantidade de alunos cadastrados|
-
-#### 3)
 
 |Caso de uso: exibir as notas dos alunos|
 |:----|
 |Resumo: as disciplinas poderão exibir as notas dos alunos|
 
-#### 4)
-
 |Caso de uso: exibir se o aluno foi aprovado ou não|
 |:--------------------------------------------------------------|
 |Resumo: o sistema poderá exibir se o aluno foi aprovado ou não|
-
-#### 5)
 
 |Caso de uso: exibir relatório de alunos por disciplina|
 |:---|
 |Resumo: o sistema poderá exibir os relatórios dos alunos divido podido por disciplina|
 
-#### 6) 
-
 |Caso de uso: exibir relatório de funcionário|
 |:----|
 |Resumo: o sistema poderá exibir relatórios dos funcionários, sendo eles, professores,coordenadores, e administradores|
 
-#### 7)
-
 |Caso de uso: exibir relatório de disciplina por curso|
 |:-----|
 |Resumo: o sistema poderá exibir o relatórios das disciplinas contidas em cada curso|
-
-#### 8)
 
 |Caso de uso: exibir relatório dos aniversariantes do mês|
 |:----|
