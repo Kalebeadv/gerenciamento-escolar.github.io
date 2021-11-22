@@ -152,13 +152,13 @@ for (let i = 0; i < atribute_array.length; i++)
 Com o laço _for_ criado, precisamos criar um controle para salvar os dados do cadastro, para isso, usaremos o operador lógico _if_, esse operador tem como objetivo realizar uma verificação, se o campo for nulo, então preenchê ele com uma _string _  pré-definida anteriormente na classe. 
 
 ```
-...
+//...
 if (document.getElementById(atribute_array[i]).value == null) 
         {
             sessionStorage.setItem(atribute_array[i], element_array[i]);
             console.log(sessionStorage.getItem(atribute_array[i]));
         }
-...
+//...
 ```
 Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador sem pré-definição. Assim como visto na condição acima, utilizamos o método _setItem_ para mudarmos o valor do campo dentro do _sessionStorage_,como parâmetro  será utilizado a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_ na posição _i_ do nosso laço atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método _getElementById_, que utilizará o nosso arranjo na posição _i_ para dizer qual o _ID_ do campo em que ele deve retornar o valor.
 
@@ -190,12 +190,12 @@ function show_teacher_registers()
 ```
 Para exibir os professores cadastrados, o operador _if_ irá verificar se o funcionário atual é um professor. Para realizar esta verificação é necessário acessar o objeto no índice atual do arranjo. Dentro deste objeto, é solicitado o atributlo _type_of_employee_, então esse atributo é comparado a nível de *conteúdo* com a palavra _Teacher_. Caso o tipo de funcionário esteja como _Teacher_, a condição irá mostrar um alerta na tela informando o nome do professor.
 ```
-...
+//...
 if(employees_guard[i].type_of_employee === "Teacher")
         {
             window.alert("Teacher name: " + employees_guard[i].name);
         }
-...
+//...
 ```
 Este mesmo formato de função será utlizado em _show_coordinator_registers_ e _show_administrator_registers_.
 ```
@@ -292,11 +292,11 @@ Dentro do laço _for_ possui duas variáveis, sendo a primeira responsável por 
 
 ```
 {
-        ...
+       //...
         let date = "" + employees_guard[i].bith_date;
         let splitao = date.split("/");
         console.log(splitao[1]);
-        ...
+        //...
 }
 ```
 Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_ e passamos o _splitao_ com index _1_ como parâmetro, desta forma o _swtich_ irá escolher sempre o mês do aniversariante e com isso, atribui-lo na variável _birthdays_ e por fim, exibimos está variável com um _window.alert_.
@@ -343,4 +343,14 @@ Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_
     }
     window.alert(birthdays);
 }
+```
+### Constuindo os objetos da classe
+
+Antes de qualquer coisa, precisamos definir quais serão os dois _arrays_ que utilizaremos em nossas funções. Criaremos criar duas variáveis constantes, chamadas _const atribute_array_ e _const element_array. A  primeira é responsável por salvar o nome dos atritubos (id,name,birth_date e etc). A segunda é responsável por guardar uma lista de valores referentes a cada atributo da nossa classe _employee_, este arranjo se torna necessário caso o usuário esqueça de preencher algum campo no registro do funcionário.
+
+```
+//...
+const atribute_array = ["id", "user_id", "name", "bith_date", "sex","type_of_employee","cpf","status"];
+const element_array = ["4", "4", "Willian", "01/06/1985", "M", "Coordinator", "111.222.333-33", "active"];
+//...
 ```
