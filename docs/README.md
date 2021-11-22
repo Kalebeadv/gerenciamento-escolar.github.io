@@ -370,3 +370,9 @@ var employ4 = new Employees(sessionStorage.getItem("id"),
     sessionStorage.getItem("status"));
 
 ```
+A seguir criaremos uma variável constante para guardar todos os nossos objetos. Essa variável será exportada para outras classes.
+```
+//...
+export const employees_guard = [employ1, employ2, employ3,employ4];
+//...
+```
