@@ -288,3 +288,59 @@ for(let i = 0; i < employees_guard.length; i++)
     //Implementação
 }
 ```
+Dentro do laço _for_ possui duas variáveis, sendo a primeira responsável por guardar a data em que cada funcionário faz aniversário, a segunda é responsável por dividir a data em partes, essas partes estão separadas por _/_, em seguida exibimos no console o _splitao_, para termos certeza que está funcionando.
+
+```
+{
+        ...
+        let date = "" + employees_guard[i].bith_date;
+        let splitao = date.split("/");
+        console.log(splitao[1]);
+        ...
+}
+```
+Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_ e passamos o _splitao_ com index _1_ como parâmetro, desta forma o _swtich_ irá escolher sempre o mês do aniversariante e com isso, atribui-lo na variável _birthdays_ e por fim, exibimos está variável com um _window.alert_.
+
+```
+       switch(splitao[1]) 
+        {
+            case "01" : birthdays += "January\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+            case "02" : birthdays += "February\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "03" : birthdays += "March\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "04" : birthdays += "April\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "05" : birthdays += "May\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "06" : birthdays += "June\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "07" : birthdays += "July\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "08" : birthdays += "August\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "09" : birthdays += "September\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "10" : birthdays += "October\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "11" : birthdays += "November\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "12" : birthdays += "December\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+        }
+    }
+    window.alert(birthdays);
+}
+```
