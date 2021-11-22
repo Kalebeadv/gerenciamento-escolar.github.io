@@ -100,7 +100,7 @@ export class Users
 ```
 A nossa classe user possui como base quatro atributos, sendo estes: id, name, birth_date e sex. A classe user sera exportada para outras classes, desta forma, possibilitando a herança entre as classes.
 
-> _obs: para que seja possivel a importacao e exportacao entre classes, as mesmas necessitam está em módulo _
+> _obs: para que seja possivel a importacao e exportacao entre classes, as mesmas necessitam está em módulo_
 
 ## Classe employees
 
