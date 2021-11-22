@@ -67,7 +67,7 @@ function show_students_registers()
 function show_notes_registers() {
     for (let i = 0; i < students_guard.length; i++) 
     {
-        if ((notes_guard[i].first_assessment + notes_guard[i].second_assessment) >= 7.0) 
+        if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 7.0) 
         {
 
             note +="name: " + students_guard[i].name +"\nStatus: " + "Approved\n" + "first_assessment: " + 
@@ -75,7 +75,7 @@ function show_notes_registers() {
             notes_guard[i].second_assessment + hr;
         }
 
-        else if ((notes_guard[i].first_assessment + notes_guard[i].second_assessment) < 7.0 &&
+        else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
             (notes_guard[i].first_assessment + notes_guard[i].second_assessment) > 4.0) 
         {
 
