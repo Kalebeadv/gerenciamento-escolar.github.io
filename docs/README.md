@@ -354,3 +354,19 @@ const atribute_array = ["id", "user_id", "name", "bith_date", "sex","type_of_emp
 const element_array = ["4", "4", "Willian", "01/06/1985", "M", "Coordinator", "111.222.333-33", "active"];
 //...
 ```
+Agora precisamos criar os objetos de fato. Criaremos três objetos pré-definidos e deixaremos um objeto para guardar os dados que o usuário irá inserir no cadastro, então, nesse último objeto, invés de digitar os valores de cada campo, buscaremos esses dados no _sessionStorege_, utilizando o método _getItem_ e passando o identificador do campo como parâmetro.
+
+```
+var employ1 = new Employees("1", "1", "kalebe", "03/12/1960", "M", "Teacher", "123.123.333-22", "active");
+var employ2 = new Employees("2", "2", "Gustavo", "03/10/1950", "M", "Administrator", "111.111.222-00", "active");
+var employ3 = new Employees("3", "3", "Evelyn", "01/06/1983", "F", "Coordinator", "333.333.333-33", "active");
+var employ4 = new Employees(sessionStorage.getItem("id"),
+    sessionStorage.getItem("user_id"),
+    sessionStorage.getItem("name"),
+    sessionStorage.getItem("bith_date"),
+    sessionStorage.getItem("sex"),
+    sessionStorage.getItem("type"),
+    sessionStorage.getItem("cpf"),
+    sessionStorage.getItem("status"));
+
+```
