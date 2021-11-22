@@ -224,3 +224,67 @@ function show_administrator_registers()
     }
 }
 ```
+#### function show_birth_days
+
+Esta função tem como objetivo mostrar os aniversariantes de cada mês. Caso o mês não possua nenhum aniversariante, este mês não será exibido ao usuário.
+
+```
+function show_birth_days()
+{
+    let birthdays = "";
+    for(let i = 0; i < employees_guard.length; i++)
+    {
+        let date = "" + employees_guard[i].bith_date;
+        let splitao = date.split("/");
+        console.log(splitao[1]);
+        switch(splitao[1]) 
+        {
+            case "01" : birthdays += "January\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+            case "02" : birthdays += "February\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "03" : birthdays += "March\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "04" : birthdays += "April\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "05" : birthdays += "May\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "06" : birthdays += "June\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "07" : birthdays += "July\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "08" : birthdays += "August\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "09" : birthdays += "September\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "10" : birthdays += "October\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "11" : birthdays += "November\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+            case "12" : birthdays += "December\n" +employees_guard[i].name + " " + 
+            employees_guard[i].bith_date + hr; break;
+
+        }
+    }
+    window.alert(birthdays);
+}
+```
+Primeiramente temos uma variável local (que só existe dentro desta função) para armazenar os aniversariantes do mês. Seguindo adiante temos um laço _for_, que irá percorrer um arranjo de objetos chamado _employee_guard_, este _array_ possui todos os funcionários cadastrados.
+
+```
+let birthdays = "";
+for(let i = 0; i < employees_guard.length; i++)
+{
+    //Implementação
+}
+```
