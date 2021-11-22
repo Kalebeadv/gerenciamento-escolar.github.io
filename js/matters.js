@@ -1,4 +1,5 @@
 import {notes_guard} from "./notes.js"
+
 class Matters {
     constructor(id, name, description) {
         this.id = id;
@@ -66,6 +67,7 @@ button.addEventListener("click",function()
     }
     window.alert(text += "Quantity of students: " + count); 
  });
+
 
 
 
