@@ -160,7 +160,7 @@ if (document.getElementById(atribute_array[i]).value == null)
         }
 ...
 ```
-Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador. Para possibilitar o salvamento, utilizamos o método _setItem_, que utilizará como parâmetro a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_ na posição _i_ do nosso laso atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método _document.getElementById_, que utilizará o nosso arranjo na posição _i_ para dizer qual o _ID_ do campo que ele deve retornar o valor contido no mesmo.
+Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador sem pré-definição. Assim como visto na condição acima, utilizamos o método _setItem_ para mudarmos o valor do campo dentro do _sessionStorage_,como parâmetro  será utlizado a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_ na posição _i_ do nosso laço atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método _document.getElementById_, que utilizará o nosso arranjo na posição _i_ para dizer qual o _ID_ do campo que ele deve retornar o valor contido no mesmo.
 
 ```
 ...
@@ -171,6 +171,29 @@ else
         }
 ...
 ```
+#### function show_teacher_registers()
 
+Esta função utiliza uma logica parecida com a função vista a cima. Um laço _for_ percorrendo um _array_ e dentro dele existe uma condição. 
 
-
+```
+function show_teacher_registers()
+{
+    for(let i = 0; i < employees_guard.length; i++)
+    {
+        
+        if(employees_guard[i].type_of_employee === "Teacher")
+        {
+            window.alert("Teacher name: " + employees_guard[i].name);
+        }
+    }
+}
+```
+Para exibir os professores cadastrados, o operador _if_ irá verificar se o funcionário atual é um professor. Para realizar esta verificação, é necessário acessar o objeto no índice atual do arranjo. Dentro deste objeto, é solicitado o atributlo _type_of_employee_, então esse atributo é comparado a nível de *conteúdo* com a palavra _Teacher_. Caso o tipo de funcionário esteja como _Teacher_, a condição irá mostrar um alerta na tela informando o nome do professor.
+```
+...
+if(employees_guard[i].type_of_employee === "Teacher")
+        {
+            window.alert("Teacher name: " + employees_guard[i].name);
+        }
+...
+```
