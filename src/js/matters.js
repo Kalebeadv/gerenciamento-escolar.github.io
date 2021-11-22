@@ -46,13 +46,13 @@ var english = new Matters();
 let button = document.getElementById("matter_register_class");
 button.addEventListener("click",function()
  {
-     localStorage.setItem("id", document.getElementById("id").value);
-     localStorage.setItem("name", document.getElementById("name").value);
-     localStorage.setItem("description", document.getElementById("description").value);
-     english = new Matters(localStorage.getItem("id"),localStorage.getItem("name"), 
-     localStorage.getItem("description"));
-     console.log(localStorage.getItem("id") + localStorage.getItem("name") +
-     localStorage.getItem("description"));
+     sessionStorage.setItem("id", document.getElementById("id").value);
+     sessionStorage.setItem("name", document.getElementById("name").value);
+     sessionStorage.setItem("description", document.getElementById("description").value);
+     english = new Matters(sessionStorage.getItem("id"),sessionStorage.getItem("name"), 
+     sessionStorage.getItem("description"));
+     console.log(sessionStorage.getItem("id") + sessionStorage.getItem("name") +
+     sessionStorage.getItem("description"));
  });
 
  let button2 = document.getElementById("quantity_students");
