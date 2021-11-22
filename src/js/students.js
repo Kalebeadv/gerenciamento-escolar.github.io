@@ -76,7 +76,7 @@ function show_notes_registers() {
         }
 
         else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
-            (notes_guard[i].first_assessment + notes_guard[i].second_assessment) > 4.0) 
+            ((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) > 4.0) 
         {
 
             note += "name: " + students_guard[i].name +"\nStatus: " +"Recovery\n" + "first_assessment: " 
