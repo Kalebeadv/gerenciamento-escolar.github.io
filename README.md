@@ -1,4 +1,4 @@
-# Gerenciamento-escolar.github.io
+# Sistema de gerenciamento escolar 
 
 Sistema de gerenciamento escolar, que visa os seguintes objetivos:
 * O sistema deve possibilitar o cadastro de alunos, funcionários, professores e disciplinas.
@@ -19,7 +19,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 ### Diagrama de classe
 ![Trabalho do Ed - Sistema escola (2)](https://user-images.githubusercontent.com/62080789/142788977-0df66e7a-1b85-49ea-bb7a-207dbc0fcc08.png)
 
-## Sobre o diagrama
+## Sobre 
 
 * users é a classe principal, ele será usado como base para a criação das classes students e employees.
 * Employees estende users, desta forma adquirindo seus atributos base,name, bith_date e sex.
@@ -82,9 +82,9 @@ coordenador de curso e professor) e de disciplinas por curso.
 |:----|
 |Resumo: o sistema poderá exibir o relatório dos aniversariantes de cada mês|
 
-# Implementacao 
+# Implementação 
 
-### Classe user
+# Classe user
 
 ```
 export class Users
@@ -98,8 +98,79 @@ export class Users
     }
 }
 ```
-A nossa classe user possui como base quatro atributos, sendo estes: id, name, birth_date e sex. A classe user sera exportada para outras classes, desta forma, possibilitando a heranca entre as classes.
+A nossa classe user possui como base quatro atributos, sendo estes: id, name, birth_date e sex. A classe user sera exportada para outras classes, desta forma, possibilitando a herança entre as classes.
 
-> _obs: para que seja possivel a importacao e exportacao entre classes, as mesmas necessitam está em modulo_
+> _obs: para que seja possivel a importacao e exportacao entre classes, as mesmas necessitam está em módulo _
+
+## Classe employees
+
+```
+import { Users } from "./users.js"
+
+export class Employees extends Users {
+    constructor(id, user_id, name, bith_date, sex, type_of_employee, cpf, status) {
+        super(user_id, name, bith_date, sex);
+        this.id = id;
+        this.type_of_employee = type_of_employee;
+        this.cpf = cpf;
+        this.status = status;
+    }
+
+}
+```
+A classe employee herda os atributos básicos (nome, data de nascimento e etc.) da classe users. Em seu construtor, é colocado todos os atributos necessários para construção do objeto employee, incluindo atributos da classe mãe.
+
+### Funções
+
+#### function register_employees
+Esta função tem como objetivo possibilitar um cadastro de funcionário, salvando os dados do cadastro no _sessionStorage_ da guia atual do navegador.
+```
+function register_employees() {
+    for (let i = 0; i < atribute_array.length; i++) 
+    {
+        if (document.getElementById(atribute_array[i]).value == null) 
+        {
+            sessionStorage.setItem(atribute_array[i], element_array[i]);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+        else 
+        {
+            sessionStorage.setItem(atribute_array[i], document.getElementById(atribute_array[i]).value);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+    }
+}
+```
+Primeiramente, nossa função possuirá um laso _for_, que será o responsável por percorrer todos os atributos do cadastro. Os atributos do cadastro são guardados em um _array_ de _strings_, chamado _atribute_array_, esse _array_ tem como objetivo guardar (de forma pré-definida) as _IDs_ do cadastro contidas no HTML da página de cadastro.
+
+```
+for (let i = 0; i < atribute_array.length; i++) 
+    {
+        //implementação
+    }
+```
+Com o laço _for_ criado, precisamos criar um controle para salvar os dados do cadastro, para isso, usaremos o operador lógico _if_, esse operador tem como objetivo realizar uma verificação, se o campo for nulo, então preenchê ele com uma _string _  pré-definida anteriormente na classe. 
+
+```
+...
+if (document.getElementById(atribute_array[i]).value == null) 
+        {
+            sessionStorage.setItem(atribute_array[i], element_array[i]);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+...
+```
+Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador. Para possibilitar o salvamento, utilizamos o método _setItem_, que utilizará como parâmetro a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_ na posição _i_ do nosso laso atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método _document.getElementById_, que utilizará o nosso arranjo na posição _i_ para dizer qual o _ID_ do campo que ele deve retornar o valor contido no mesmo.
+
+```
+...
+else 
+        {
+            sessionStorage.setItem(atribute_array[i], document.getElementById(atribute_array[i]).value);
+            console.log(sessionStorage.getItem(atribute_array[i]));
+        }
+...
+```
+
 
 
