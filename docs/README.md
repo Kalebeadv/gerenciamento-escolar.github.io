@@ -45,7 +45,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 |Resumo: o funcionário poderá ser cadastrado, esse funcionário poderá ser: professor, coordenador ou gerente.|
 
 |Caso de uso: exibir quantidade de alunos|
-|-----|
+|:-----|
 |Resumo: As disciplinas poderão exibir a quantidade de alunos cadastrados|
 
 |Caso de uso: exibir as notas dos alunos|
