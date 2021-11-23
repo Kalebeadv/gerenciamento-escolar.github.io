@@ -820,3 +820,6 @@ function show_birth_days()
     window.alert(birthdays);
 }
 ```
+### Constuindo os objetos da classe
+
+Primeiramente precisamos criar duas constantes, elas guardaram os _IDs_ dos 
