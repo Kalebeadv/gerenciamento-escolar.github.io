@@ -31,7 +31,12 @@ let show_birhday = document.getElementById("birthday_register");
 let show_students_for_matters_registers = document.getElementById("students_for_matters_registers");
 var note = "";
 let hr = "\n___________________\n";
-register_student.addEventListener("click", register_students);
+
+if(register_student)
+{
+    register_student.addEventListener("click", register_students);
+}
+
 show_students_register.addEventListener("click", show_students_registers);
 show_notes.addEventListener("click", show_notes_registers);
 show_students_for_matters_registers.addEventListener("click", students_for_matters_register);
