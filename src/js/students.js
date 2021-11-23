@@ -11,6 +11,9 @@ export class Students extends Users
     }
 }
 
+const atribute_array = ["student_id", "user_id_student", "student_name", "student_bith_date", "student_sex"];
+const element_array = ["4","4","Kalebe o iracundo", "03/12/2000", "M"];
+
 var student1 = new Students("1", "1", "alberto", "03/12/1960", "M")
 var student2 = new Students("2", "2", "luciano", "03/10/1950", "M");
 var student3 = new Students("3", "3", "emely", "01/06/1983", "F")
@@ -21,8 +24,6 @@ var student4 = new Students(sessionStorage.getItem("student_id"),
     sessionStorage.getItem("student_sex"));
 
 export const students_guard = [student1,student2,student3,student4];
-const atribute_array = ["student_id", "user_id_student", "student_name", "student_bith_date", "student_sex"];
-const element_array = ["4","4","Kalebe o iracundo", "03/12/2000", "M"];
 let register_student = document.getElementById("button__student_registration");
 let show_students_register = document.getElementById("student_register");
 let show_notes = document.getElementById("notes_register");
