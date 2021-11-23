@@ -33,6 +33,7 @@ var matter4 = new Matters();
 export const matters_guard = [history,mathematics,geography,matter4];
 
 let button = document.getElementById("matter_register_class");
+let button2 = document.getElementById("quantity_students");
 
 if(button)
 {
@@ -46,8 +47,6 @@ if(button)
      sessionStorage.getItem("description"));
  });
 }
-
- let button2 = document.getElementById("quantity_students");
 
  if(button2)
  {
