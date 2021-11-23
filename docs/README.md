@@ -765,3 +765,58 @@ Por fim a exibiremos aos usuário a variável _matters_ através do _window.aler
 //...
 ```
 
+#### function show_birth_days
+Esta função é quase a mesma das funções _show_birth_days_ apresentadas acima. O que a diferencia das outras funções apresentadas acima, é no tipo de _array_ que  o laço _for_ estará percorrendo e os dados que ela está guardado na variável _birthdays_.
+
+```
+function show_birth_days()
+{
+    
+    let birthdays = "";
+    for(let i = 0; i < students_guard.length; i++)
+    {
+        let date = "" + students_guard[i].bith_date;
+        let splitao = date.split("/");
+        console.log(splitao[1]);
+        switch(splitao[1]) 
+        {
+            case "01" : birthdays += "January\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+            case "02" : birthdays += "February\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "03" : birthdays += "March\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "04" : birthdays += "April\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "05" : birthdays += "May\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "06" : birthdays += "June\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "07" : birthdays += "July\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "08" : birthdays += "August\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "09" : birthdays += "September\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "10" : birthdays += "October\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "11" : birthdays += "November\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+            case "12" : birthdays += "December\n" +students_guard[i].name + " " + 
+            students_guard[i].bith_date + hr; break;
+
+        }
+    }
+    window.alert(birthdays);
+}
+```
