@@ -701,8 +701,67 @@ else
 ```
 
 #### function students_for_matters_register
-
+Esta função mostra os estudantes por disciplinas/matérias cadastradas.
 ```
+function students_for_matters_register()
+{
+    let matters = "";
+    let count = 0;
+    for(let i = 0; i < students_guard.length; i++)
+    {
+        if(students_guard[i].id == inscriptions_guard[i].student_id)
+        {
+            quantity_student_count++;
+            if(students_guard[i].id){count++;} 
+            matters += "Matter id:" + inscriptions_guard[i].matter_id + "\n" + 
+            "Matter name: " + matters_guard[i].name + "\n" +
+            "Student id: " + inscriptions_guard[i].student_id +"\n"+ 
+            "Student name: " + students_guard[i].name + "\n" +
+            "Quantity: " + count + hr;
+            count = 0;
+        } 
+    }
+    window.alert(matters);
+}
 ```
+Primeiramente criaremos duas variáveis locais, a primeira irá armazenar uma _string_ contendo as informações dos estudantes e a segunda mostrará a quantidade de estudantes em cada disciplina/matéria.
+```
+//...
+let matters = "";
+let count = 0;
+//...
+```
+Agora criaremos um laço _for_ que irá percorrer um _array_ de objetos chamado _students_guard_.
+```
+//...
+for(let i = 0; i < students_guard.length; i++)
+    {
+        //implementação 
+    }
+//...
+```
+Dentro do laço faremos uma verificação para saber se o _ID_ do aluno no index do _array_ é igual a sua inscrição (As inscrições estão contidas em um arranjo chamado _inscriptions_guard_ que importamos no início da classe), se a verificação for verdadeira o aluno será adicionado na a variável _matters_ com as seguintes informaçoes: _matter id, _matter name_, _student_id_, _quantity_. 
 
+>Obs: a variável _quantity_students_count_ sera explicada mais a frente. 
+```
+//...
+if(students_guard[i].id == inscriptions_guard[i].student_id)
+        {
+            quantity_student_count++;
+            if(students_guard[i].id){count++;} 
+            matters += "Matter id:" + inscriptions_guard[i].matter_id + "\n" + 
+            "Matter name: " + matters_guard[i].name + "\n" +
+            "Student id: " + inscriptions_guard[i].student_id +"\n"+ 
+            "Student name: " + students_guard[i].name + "\n" +
+            "Quantity: " + count + hr;
+            count = 0;
+        } 
+//...
+```
+Por fim a exibiremos aos usuário a variável _matters_ através do _window.alert_.
+```
+//...
+  window.alert(matters);
+//...
+```
 
