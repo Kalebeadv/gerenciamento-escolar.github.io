@@ -62,7 +62,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 |Caso de uso: exibir relatório de funcionário|
 |:----|
-|Resumo: o sistema poderá exibir relatórios dos funcionários, sendo eles, professores,coordenadores, e administradores|
+|Resumo: o sistema poderá exibir relatórios dos funcionários, sendo eles, professores, coordenadores, e administradores|
 
 |Caso de uso: exibir relatório de disciplina por curso|
 |:-----|
