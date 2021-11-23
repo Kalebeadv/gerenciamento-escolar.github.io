@@ -12,7 +12,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 ### [Página principal](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src)
 
-### [Arquivos javaScript](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src/js)
+### [Arquivos JavaScript](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src/js)
 
 ### [Arquivos HTML](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src/html)
 
@@ -76,7 +76,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 ## Classe users
 
-```JavaScript
+```js
 export class Users
 {
     constructor(id,name,bith_date,sex)
@@ -95,7 +95,7 @@ A nossa classe user possui como base quatro atributos, sendo estes: id, name, bi
 
 ## Classe employees
 
-```JavaScript
+```js
 import { Users } from "./users.js"
 
 export class Employees extends Users {
@@ -118,7 +118,7 @@ A classe employee herda os atributos básicos (nome, data de nascimento e etc.) 
 
 Esta função tem como objetivo possibilitar um cadastro de funcionário, salvando os dados do cadastro no_sessionStorage_ da guia atual do navegador.
 
-```JavaScript
+```js
 function register_employees() {
     for (let i = 0; i < atribute_array.length; i++) 
     {
@@ -138,7 +138,7 @@ function register_employees() {
 
 Primeiramente, nossa função possuirá um laço _for_, que será o responsável por percorrer todos os atributos do cadastro. Os atributos do cadastro são guardados em um _array_ de _strings_, chamado _atribute_array_, esse_array_tem como objetivo guardar (de forma pré-definida) as_IDs_ do cadastro contidas no HTML da página de cadastro.
 
-```JavaScript
+```js
 for (let i = 0; i < atribute_array.length; i++) 
     {
         //implementação
@@ -147,7 +147,7 @@ for (let i = 0; i < atribute_array.length; i++)
 
 Com o laço _for_ criado, precisamos criar um controle para salvar os dados do cadastro, para isso, usaremos o operador lógico _if_, esse operador tem como objetivo realizar uma verificação, se o campo for nulo, então preenchê ele com uma _string_  pré-definida anteriormente na classe.
 
-```JavaScript
+```js
 //...
 if (document.getElementById(atribute_array[i]).value == null) 
         {
@@ -159,7 +159,7 @@ if (document.getElementById(atribute_array[i]).value == null)
 
 Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador sem pré-definição. Assim como visto na condição acima, utilizamos o método _setItem_ para mudarmos o valor do campo dentro do _sessionStorage_,como parâmetro  será utilizado a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_na posição_i_do nosso laço atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método_getElementById_, que utilizará o nosso arranjo na posição_i_para dizer qual o_ID_ do campo em que ele deve retornar o valor.
 
-```JavaScript
+```js
 //...
 else 
         {
@@ -173,7 +173,7 @@ else
 
 Esta função utiliza uma logica parecida com a função vista a cima. Um laço _for_ percorrendo um _array_ e dentro dele existe uma condição.
 
-```JavaScript
+```js
 function show_teacher_registers()
 {
     for(let i = 0; i < employees_guard.length; i++)
@@ -189,7 +189,7 @@ function show_teacher_registers()
 
 Para exibir os professores cadastrados, o operador _if_ irá verificar se o funcionário atual é um professor. Para realizar esta verificação é necessário acessar o objeto no índice atual do arranjo. Dentro deste objeto, é solicitado o atributlo _type_of_employee_, então esse atributo é comparado a nível de *conteúdo* com a palavra _Teacher_. Caso o tipo de funcionário esteja como _Teacher_, a condição irá mostrar um alerta na tela informando o nome do professor.
 
-```JavaScript
+```js
 //...
 if(employees_guard[i].type_of_employee === "Teacher")
         {
@@ -200,7 +200,7 @@ if(employees_guard[i].type_of_employee === "Teacher")
 
 Este mesmo formato de função será utlizado em _show_coordinator_registers_ e _show_administrator_registers_.
 
-```JavaScript
+```js
 function show_coordinator_registers()
 {
     for(let i = 0; i < employees_guard.length; i++)
@@ -214,7 +214,7 @@ function show_coordinator_registers()
 }
 ```
 
-```JavaScript
+```js
 function show_administrator_registers()
 {
     for(let i = 0; i < employees_guard.length; i++)
@@ -232,7 +232,7 @@ function show_administrator_registers()
 
 Esta função tem como objetivo mostrar os aniversariantes de cada mês. Caso o mês não possua nenhum aniversariante, este mês não será exibido ao usuário.
 
-```JavaScript
+```js
 function show_birth_days()
 {
     let birthdays = "";
@@ -286,7 +286,7 @@ function show_birth_days()
 
 Primeiramente temos uma variável local (que só existe dentro desta função) para armazenar os aniversariantes do mês. Seguindo adiante temos um laço _for_, que irá percorrer um arranjo de objetos chamado _employee_guard_, este_array_ possui todos os funcionários cadastrados.
 
-```JavaScript
+```js
 let birthdays = "";
 for(let i = 0; i < employees_guard.length; i++)
 {
@@ -296,7 +296,7 @@ for(let i = 0; i < employees_guard.length; i++)
 
 Dentro do laço _for_ possui duas variáveis, sendo a primeira responsável por guardar a data em que cada funcionário faz aniversário, a segunda é responsável por dividir a data em partes, essas partes estão separadas por _/_, em seguida exibimos no console o _splitao_, para termos certeza que está funcionando.
 
-```JavaScript
+```js
 {
        //...
         let date = "" + employees_guard[i].bith_date;
@@ -308,7 +308,7 @@ Dentro do laço _for_ possui duas variáveis, sendo a primeira responsável por 
 
 Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_ e passamos o _splitao_ com index _1_ como parâmetro, desta forma o _swtich_ irá escolher sempre o mês do aniversariante e com isso, atribui-lo na variável _birthdays_ e por fim, exibimos está variável com um _window.alert_.
 
-```JavaScript
+```js
        switch(splitao[1]) 
         {
             case "01" : birthdays += "January\n" +employees_guard[i].name + " " + 
@@ -356,7 +356,7 @@ Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_
 
 Antes de qualquer coisa, precisamos definir quais serão os dois _arrays_ que utilizaremos em nossas funções. Criaremos criar duas variáveis constantes, chamadas _const atribute_array_e_const element_array. A  primeira é responsável por salvar o nome dos atritubos (id,name,birth_date e etc). A segunda é responsável por guardar uma lista de valores referentes a cada atributo da nossa classe _employee_, este arranjo se torna necessário caso o usuário esqueça de preencher algum campo no registro do funcionário.
 
-```JavaScript
+```js
 //...
 const atribute_array = ["id", "user_id", "name", "bith_date", "sex","type_of_employee","cpf","status"];
 const element_array = ["4", "4", "Willian", "01/06/1985", "M", "Coordinator", "111.222.333-33", "active"];
@@ -365,7 +365,7 @@ const element_array = ["4", "4", "Willian", "01/06/1985", "M", "Coordinator", "1
 
 Agora precisamos criar os objetos de fato. Criaremos três objetos pré-definidos e deixaremos um objeto para guardar os dados que o usuário irá inserir no cadastro, então, nesse último objeto, invés de digitar os valores de cada campo, buscaremos esses dados no _sessionStorege_, utilizando o método _getItem_ e passando o identificador do campo como parâmetro.
 
-```JavaScript
+```js
 var employ1 = new Employees("1", "1", "kalebe", "03/12/1960", "M", "Teacher", "123.123.333-22", "active");
 var employ2 = new Employees("2", "2", "Gustavo", "03/10/1950", "M", "Administrator", "111.111.222-00", "active");
 var employ3 = new Employees("3", "3", "Evelyn", "01/06/1983", "F", "Coordinator", "333.333.333-33", "active");
@@ -382,7 +382,7 @@ var employ4 = new Employees(sessionStorage.getItem("id"),
 
 A seguir criaremos uma variável constante para guardar todos os nossos objetos. Essa variável será exportada para outras classes.
 
-```JavaScript
+```js
 //...
 export const employees_guard = [employ1, employ2, employ3,employ4];
 //...
@@ -390,7 +390,7 @@ export const employees_guard = [employ1, employ2, employ3,employ4];
 
 Com o nosso _array_ de objetos criado, precisamos ouvir quando uma solicitação vier pela parte do usuário e para isso criaremos variáveis responsáveis em "ouvir" as requisições do usuário. Então criaremos cinto variáveis, cada uma pra "ouvir" um _button_ diferente, a primeira será responsável pelo registro, a segunda é para os relatórios dos professores, a terceira é para os relatórios dos coordenadores, a quarta é para os relatórios dos administradores e a última é responsável pelo relatório de aniversariantes do mês.
 
-```JavaScript
+```js
 //...
 let button_register = document.getElementById("button_employee_registration");
 let button_teacher_report = document.getElementById("teacher_register");
@@ -402,7 +402,7 @@ let button_birth_day = document.getElementById("birth_day_register");
 
 Após criarmos e iniciarmos todas as variáveis, precisamos fazer uso das mesmas. Cada uma destas variáveis será responsável por ativar uma função, assim que ela "ouvir" um clique, chamará a função.
 
-```JavaScript
+```js
 //...
 button_register.addEventListener("click", register_employees);
 button_teacher_report.addEventListener("click", show_teacher_registers);
@@ -414,7 +414,7 @@ button_birth_day.addEventListener("click", show_birth_days);
 
 Este é o codigo completo da classe employees:
 
-```JavaScript
+```js
 import { Users } from "./users.js"
 
 export class Employees extends Users {
@@ -564,7 +564,7 @@ function show_birth_days()
 
 A classe _students_ é responsável por gerenciar os alunos, essa classe estende _users_, desta forma adquirindo seus atributos. Além disso, ela possui acesso aos _arrays_ de objetos das classes: _notes, matters_ e _inscriptions_.
 
-```JavaScript
+```js
 import { Users } from "./users.js";
 import { notes_guard } from "./notes.js";
 import { matters_guard } from "./matters.js"; 
@@ -586,7 +586,7 @@ export class Students extends Users
 
 Esta função é bem parecida com a função _register_employees_da classe_employees_, porém sua diferença é nos itens que ela percorre, enquanto a função vista a cima perceorre um arranjo de funcionários, está percorre um de estudantes.
 
-```JavaScript
+```js
 //...
 function register_students()
 {
@@ -611,7 +611,7 @@ function register_students()
 
 Como o próprio nome sugere, esta _function_ mostra os estudantes cadastrados.
 
-```JavaScript
+```js
 //...
 function show_students_registers()
 {
@@ -627,7 +627,7 @@ function show_students_registers()
 
 Primeiramente precisamos criar uma variável do tipo _string_ que irá armazenar os registros dos alunos, ela se chamará _student_registers_.
 
-```JavaScript
+```js
 //...
 let student_registers = "";
 //...
@@ -635,7 +635,7 @@ let student_registers = "";
 
 Agora chegamos na parte principal da funcao, um laço _for_ que percorre o _array_ de objetos chamado _students_guard_.
 
-```JavaScript
+```js
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
@@ -646,7 +646,7 @@ for(let i = 0; i < students_guard.length; i++)
 
 Dentro deste laço a variavel local _student_registers_soma e adiciona uma_string_contendo o atributo nome do estudante em um objeto dentro do_array_, assim como o_ID_do estudante. Após finalizar o laço com todos os registros o_students_registers_ é mostrado ao usuário atrávés de um _window.alert_.
 
-```JavaScript
+```js
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
@@ -660,7 +660,7 @@ for(let i = 0; i < students_guard.length; i++)
 
 Esta função tem como objetivo, exibir ao usuário o relatório das notas dos estudantes. Este relatório, dirá o nome do estudante, dirá se ele foi aprovado ou não, além de mostrar suas notas (n1 e n2).
 
-```JavaScript
+```js
 function show_notes_registers() {
     for (let i = 0; i < students_guard.length; i++) 
     {
@@ -694,7 +694,7 @@ function show_notes_registers() {
 
 Um laço _for_ irá percorrer todos os objetos _students_ contidos em _students_guard_e quando o laço for finalizado mostrará ao usuário (através de um_window.alert_) o relatorio das notas dos estudantes.
 
-```JavaScript
+```js
 //...
 for (let i = 0; i < students_guard.length; i++) 
     {
@@ -707,7 +707,7 @@ for (let i = 0; i < students_guard.length; i++)
 
 Dentro do laço _for_ será realizado várias verificações para saber se o aluno foi aprovado ou não. A primeira verificação busca saber se a média das duas notas é maior ou igual a _7_ se sim, o aluno é salvo com status de _Approved_, se não, o laço irá para o segundo if.
 
-```JavaScript
+```js
 //...
 if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 7.0) 
         {
@@ -722,7 +722,7 @@ if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 
 A segunda verificação busca saber se a média do aluno está abaixo de _7_ e maior que _4_. Se a média estiver dentro destes limites, o aluno é salvo com um status de _Recovery_
 indicando que ele está de recuperação.
 
-```JavaScript
+```js
  else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
             ((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) > 4.0) 
         {
@@ -735,7 +735,7 @@ indicando que ele está de recuperação.
 
 Se a média do aluno não estiver dentro deste limite, ele irá para a opção default, ou seja, caso ele não tenha atendido nenhuma das requisições acima, ele irá cair nesta obrigatoriamente. Por fim, o aluno está com a média abaixo de _4_, então ele será armazenado com um status de _failed.
 
-```JavaScript
+```js
 else 
         {
             note += "name: " + students_guard[i].name +"\nStatus: " + "Failed\n" + "first_assessment: " +
@@ -748,7 +748,7 @@ else
 
 Esta função mostra os estudantes por disciplinas/matérias cadastradas.
 
-```JavaScript
+```js
 function students_for_matters_register()
 {
     let matters = "";
@@ -773,7 +773,7 @@ function students_for_matters_register()
 
 Primeiramente criaremos duas variáveis locais, a primeira irá armazenar uma _string_ contendo as informações dos estudantes e a segunda mostrará a quantidade de estudantes em cada disciplina/matéria.
 
-```JavaScript
+```js
 //...
 let matters = "";
 let count = 0;
@@ -782,7 +782,7 @@ let count = 0;
 
 Agora criaremos um laço _for_ que irá percorrer um _array_ de objetos chamado _students_guard_.
 
-```JavaScript
+```js
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
@@ -793,7 +793,7 @@ for(let i = 0; i < students_guard.length; i++)
 
 Dentro do laço faremos uma verificação para saber se o _ID_ do aluno no index do _array_ é igual a sua inscrição (As inscrições estão contidas em um arranjo chamado _inscriptions_guard_que importamos no início da classe), se a verificação for verdadeira o aluno será adicionado na a variável_matters_com as seguintes informaçoes:_matter id, _matter name_, _student_id_,_quantity_.
 
-```JavaScript
+```js
 //...
 if(students_guard[i].id == inscriptions_guard[i].student_id)
         {
@@ -810,7 +810,7 @@ if(students_guard[i].id == inscriptions_guard[i].student_id)
 
 Por fim a exibiremos aos usuário a variável _matters_ através do _window.alert_.
 
-```JavaScript
+```js
 //...
   window.alert(matters);
 //...
@@ -820,7 +820,7 @@ Por fim a exibiremos aos usuário a variável _matters_ através do _window.aler
 
 Esta função é quase a mesma das funções _show_birth_days_ apresentadas acima. O que a diferencia das outras funções apresentadas acima, é no tipo de _array_ que  o laço _for_ estará percorrendo e os dados que ela está guardado na variável _birthdays_.
 
-```JavaScript
+```js
 function show_birth_days()
 {
     
@@ -877,7 +877,7 @@ function show_birth_days()
 
 Primeiramente precisamos criar duas constantes, a primeira será para guardar os _IDs_ referentes aos _inputs_ contidos no _HTML_, a segunda é uma garantia caso o usuário esqueça de preencher algum campo na hora de registrar um estudante.
 
-```JavaScript
+```js
 //...
 const atribute_array = ["student_id", "user_id_student", "student_name", "student_bith_date", "student_sex"];
 const element_array = ["4","4","Kalebe o iracundo", "03/12/2000", "M"];
