@@ -549,7 +549,7 @@ export class Students extends Users
 }
 //...
 ```
-## Funcoes 
+## Funções  
 
 ### function register_students
 
@@ -602,7 +602,7 @@ Agora chegamos na parte principal da funcao, um laço _for_ que percorre o _arra
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
-        //implementacao 
+        //implementação 
     }
 //...
 ```
@@ -618,10 +618,87 @@ for(let i = 0; i < students_guard.length; i++)
 //...
 ```
 
+#### function show_notes_registers
 
+Esta função tem como objetivo, exibir ao usuário o relatório das notas dos estudantes. Este relatório, dirá o nome do estudante, dirá se ele foi aprovado ou não, além de mostrar suas notas (n1 e n2). 
+```
+function show_notes_registers() {
+    for (let i = 0; i < students_guard.length; i++) 
+    {
+        if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 7.0) 
+        {
 
+            note +="name: " + students_guard[i].name +"\nStatus: " + "Approved\n" + "first_assessment: " + 
+            notes_guard[i].first_assessment + "\n" +"second_assessment: " + 
+            notes_guard[i].second_assessment + hr;
+        }
 
+        else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
+            ((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) > 4.0) 
+        {
 
+            note += "name: " + students_guard[i].name +"\nStatus: " +"Recovery\n" + "first_assessment: " 
+            + notes_guard[i].first_assessment + "\n" +
+            "second_assessment: " + notes_guard[i].second_assessment + hr;
+        }
+
+        else 
+        {
+            note += "name: " + students_guard[i].name +"\nStatus: " + "Failed\n" + "first_assessment: " +
+            notes_guard[i].first_assessment + "\n" +
+            "second_assessment: " + notes_guard[i].second_assessment + hr;
+        }
+    }
+    window.alert(note);
+}
+```
+Um laço _for_ irá percorrer todos os objetos _students_ contidos em _students_guard_ e quando o laço for finalizado mostrará ao usuário (através de um _window.alert_) o relatorio das notas dos estudantes.
+
+```
+//...
+for (let i = 0; i < students_guard.length; i++) 
+    {
+      //implementação 
+    }
+    window.alert(note);
+}
+//...
+```
+Dentro do laço _for_ será realizado várias verificações para saber se o aluno foi aprovado ou não. A primeira verificação busca saber se a média das duas notas é maior ou igual a _7_ se sim, o aluno é salvo com status de _Approved_, se não, o laço irá para o segundo if.
+
+```
+//...
+if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 7.0) 
+        {
+
+            note +="name: " + students_guard[i].name +"\nStatus: " + "Approved\n" + "first_assessment: " + 
+            notes_guard[i].first_assessment + "\n" +"second_assessment: " + 
+            notes_guard[i].second_assessment + hr;
+        }
+//...
+```
+A segunda verificação busca saber se a média do aluno está abaixo de _7_ e maior que _4_. Se a média estiver dentro destes limites, o aluno é salvo com um status de _Recovery_
+indicando que ele está de recuperação. 
+```
+ else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
+            ((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) > 4.0) 
+        {
+
+            note += "name: " + students_guard[i].name +"\nStatus: " +"Recovery\n" + "first_assessment: " 
+            + notes_guard[i].first_assessment + "\n" +
+            "second_assessment: " + notes_guard[i].second_assessment + hr;
+        }
+```
+Se a média do aluno não estiver dentro deste limite, ele irá para a opção default, ou seja, caso ele não tenha atendido nenhuma das requisições acima, ele irá cair nesta obrigatoriamente. Por fim, o aluno está com a média abaixo de _4_, então ele será armazenado com um status de _failed.
+
+```
+else 
+        {
+            note += "name: " + students_guard[i].name +"\nStatus: " + "Failed\n" + "first_assessment: " +
+            notes_guard[i].first_assessment + "\n" +
+            "second_assessment: " + notes_guard[i].second_assessment + hr;
+        }
+```
 
 
 
