@@ -25,7 +25,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 ## Sobre
 
 * users é a classe principal, ele será usado como base para a criação das classes students e employees.
-* Employees estende users, desta forma adquirindo seus atributos base,name, bith_date e sex.
+* Employees estende users, desta forma adquirindo seus atributos base, name, bith_date e sex.
 * employeers_courses, através desta tabela, os funcionários (professores, coordenadores e administradores de curso) poderão ministrar os cursos.
 * students estende users, adquirindo todos os seus atributos base, então por conta disso, a classe students, só possuirá a sua id como atributo exclusivo da própria classe.
 * courses, essa tabela possui dois atributos, sua id e o nome do curso.
