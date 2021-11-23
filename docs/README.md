@@ -1113,4 +1113,3 @@ function show_birth_days()
     window.alert(birthdays);
 }
 ```
-

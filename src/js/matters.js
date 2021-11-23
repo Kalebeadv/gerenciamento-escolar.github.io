@@ -7,20 +7,7 @@ class Matters {
         this.description = description;
     }
     atribute_array = ["id", "name", "description"];
-    element_array = ["4", "English", "Pro english"];
-
-    register_matters() {
-        for (let i = 0; i < atribute_array.length; i++) {
-            if (document.getElementById("id").value == null) {
-                sessionStorage.setItem(atribute_array[i], element_array[i]);
-                console.log(sessionStorage.getItem(atribute_array[i]));
-            }
-            else {
-                sessionStorage.setItem(atribute_array[i], document.getElementById(atribute_array[i]).value);
-                console.log(sessionStorage.getItem(atribute_array[i]));
-            }
-        }
-    }
+    element_array = ["4", "matter4", "Pro matter4"];
 }
 
 
@@ -41,11 +28,12 @@ var geography = new Matters("2", "Geography", "the study of the world, its physi
     + "social environments, and the dynamic nature of the relationships" 
     + "among them, from local to global scales.");
 
-var english = new Matters();
+var matter4 = new Matters();
 
-export const matters_guard = [history,mathematics,geography,english];
+export const matters_guard = [history,mathematics,geography,matter4];
 
 let button = document.getElementById("matter_register_class");
+
 if(button)
 {
     button.addEventListener("click",function()
@@ -53,9 +41,8 @@ if(button)
      sessionStorage.setItem("id", document.getElementById("id").value);
      sessionStorage.setItem("name", document.getElementById("name").value);
      sessionStorage.setItem("description", document.getElementById("description").value);
-     english = new Matters(sessionStorage.getItem("id"),sessionStorage.getItem("name"), 
-     sessionStorage.getItem("description"));
-     console.log(sessionStorage.getItem("id") + sessionStorage.getItem("name") +
+
+     matter4 = new Matters(sessionStorage.getItem("id"),sessionStorage.getItem("name"), 
      sessionStorage.getItem("description"));
  });
 }
