@@ -41,7 +41,7 @@ show_students_register.addEventListener("click", show_students_registers);
 show_notes.addEventListener("click", show_notes_registers);
 show_students_for_matters_registers.addEventListener("click", students_for_matters_register);
 show_birhday.addEventListener("click", show_birth_days);
-let quantity_student_count = 0;
+
 function register_students()
 {
     for(let i = 0; i < atribute_array.length; i++)
@@ -108,7 +108,7 @@ function students_for_matters_register()
     {
         if(students_guard[i].id == inscriptions_guard[i].student_id)
         {
-            quantity_student_count++;
+           
             if(students_guard[i].id){count++;} 
             matters += "Matter id:" + inscriptions_guard[i].matter_id + "\n" + 
             "Matter name: " + matters_guard[i].name + "\n" +
