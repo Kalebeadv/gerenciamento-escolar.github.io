@@ -1130,6 +1130,7 @@ function show_birth_days()
     window.alert(birthdays);
 }
 ```
+<<<<<<< HEAD
 
 ### Classe courses
 
@@ -1364,3 +1365,5 @@ if(button2)
      });
  }
 ```
+=======
+>>>>>>> 16610ff77f76744df057b7fad3aa12d6319d55ac
