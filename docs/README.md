@@ -10,38 +10,37 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 ## Sumário
 
-- #### [Página do projeto](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src)
++ #### [Página do projeto](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src)
 
-- #### [Relatórios](#relatórios)
++ #### [Relatórios](#relatórios)
 
-- #### [Diagrama de classe](#diagrama-de-classe)
++ #### [Diagrama de classe](#diagrama-de-classe)
 
-- #### [Sobre](#sobre)
++ #### [Sobre](#sobre)
 
-- #### [Diagramas de caso de uso](#diagramas-de-caso-de-uso)
++ #### [Diagramas de caso de uso](#diagramas-de-caso-de-uso)
++ #### [Descrição simples dos casos de uso](#descrição-simples-dos-casos-de-uso)
 
-- #### [Descrição simples dos casos de uso](#descrição-simples-dos-casos-de-uso)
++ #### [Classe users](#classe-users)
 
-- #### [Classe users](#classe-users)
++ #### [Classe employees](#classe-employees)
 
-- #### [Classe employees](#classe-employees)
++ #### [Classe students](#classe-students)
 
-- #### [Classe students](#classe-students)
++ #### [Classe courses](#classe-courses)
 
-- #### [Classe courses](#classe-courses)
++ #### [Classe notes](#classe-notes)
 
-- #### [Classe notes](#classe-notes)
++ #### [Classe inscriptions](#classe-inscriptions)
 
-- #### [Classe inscriptions](#classe-inscriptions)
++ #### [Classe matters](#classe-matters)
 
-- #### [Classe matters](#classe-matters)
++ #### [Telas em uso](#telas-do-sistema-em-uso)
 
-- #### [Telas em uso](#telas-do-sistema-em-uso)
-
-  - #### [Tela principal](#tela-principal)
-  - #### [Matters](#matters)
-  - #### [Students](#students)
-  - #### [Employees](#employees)
+  + #### [Tela principal](#tela-principal)
+  + #### [Matters](#matters)
+  + #### [Students](#students)
+  + #### [Employees](#employees)
 
 
 ## Relatórios
