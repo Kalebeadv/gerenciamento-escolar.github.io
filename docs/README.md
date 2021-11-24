@@ -1,20 +1,3 @@
-Criaremos quatro inscrições, para os quatro alunos registrados no sistema. Cada objeto utilizara as _IDs_ referentes as outras classes.
-
-```js
-//...
-var inscription1 = new Inscriptions("1","1","1","1","1");
-var inscription2 = new Inscriptions("2","2","2","2","2");
-var inscription3 = new Inscriptions("3","3","3","3","3");
-var inscription4 = new Inscriptions("4","4","4","4","4");
-//...
-```
-
-Por fim, como já é de costume, criaremos um _array_ para guardar todas as nossas inscrições e exportá-las para outra classe.
-
-```js
-//...
-export const inscriptions_guard = [inscription1,inscription2,inscription3,inscription4];
-```
 # Sistema de gerenciamento escolar
 
 Sistema de gerenciamento escolar, que visa os seguintes objetivos:
@@ -1130,7 +1113,6 @@ function show_birth_days()
     window.alert(birthdays);
 }
 ```
-<<<<<<< HEAD
 
 ### Classe courses
 
@@ -1365,5 +1347,3 @@ if(button2)
      });
  }
 ```
-=======
->>>>>>> 16610ff77f76744df057b7fad3aa12d6319d55ac
