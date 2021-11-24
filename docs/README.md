@@ -412,7 +412,7 @@ button_birth_day.addEventListener("click", show_birth_days);
 //...
 ```
 
-Este é o codigo completo da classe employees:
+Este é o código completo da classe employees:
 
 ```js
 import { Users } from "./users.js"
