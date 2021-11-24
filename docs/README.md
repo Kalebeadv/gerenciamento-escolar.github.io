@@ -1,3 +1,20 @@
+Criaremos quatro inscrições, para os quatro alunos registrados no sistema. Cada objeto utilizara as _IDs_ referentes as outras classes.
+
+```js
+//...
+var inscription1 = new Inscriptions("1","1","1","1","1");
+var inscription2 = new Inscriptions("2","2","2","2","2");
+var inscription3 = new Inscriptions("3","3","3","3","3");
+var inscription4 = new Inscriptions("4","4","4","4","4");
+//...
+```
+
+Por fim, como já é de costume, criaremos um _array_ para guardar todas as nossas inscrições e exportá-las para outra classe.
+
+```js
+//...
+export const inscriptions_guard = [inscription1,inscription2,inscription3,inscription4];
+```
 # Sistema de gerenciamento escolar
 
 Sistema de gerenciamento escolar, que visa os seguintes objetivos:
@@ -5,7 +22,7 @@ Sistema de gerenciamento escolar, que visa os seguintes objetivos:
 * O sistema deve possibilitar o cadastro de alunos, funcionários, professores e disciplinas.
 * As disciplinas devem exibir a quantidade de alunos e as notas dos mesmos.
 * O sistema deve exibir se o aluno foi aprovado ou não (N1 e N2 são obrigatórias).
-* O sistema deve exibir relatórios de: alunos cadastrados, alunos por disciplina,funcionários (em 3 níveis administrativo,
+* O sistema deve exibir relatórios de: alunos cadastrados, alunos por disciplina, funcionários (em 3 níveis administrativos,
 coordenador de curso e professor) e de disciplinas por curso.
 
 ## Sumário
@@ -25,10 +42,10 @@ coordenador de curso e professor) e de disciplinas por curso.
 ## Sobre
 
 * users é a classe principal, ele será usado como base para a criação das classes students e employees.
-* Employees estende users, desta forma adquirindo seus atributos base,name, bith_date e sex.
+* Employees estende users, desta forma adquirindo seus atributos base, name, bith_date e sex.
 * employeers_courses, através desta tabela, os funcionários (professores, coordenadores e administradores de curso) poderão ministrar os cursos.
-* students estende users, adquirindo todos os seus atributos base, então por conta disso, a classe students, só possuirá a sua id como atributo exclusivo da própria classe.
-* courses, essa tabela possui dois atributos, sua id e o nome do curso.
+* students estende users, adquirindo todos os seus atributos base, então por conta disso, a classe students, só possuirá a seu _id_ como atributo exclusivo da própria classe.
+* courses, essa tabela possui dois atributos, seu _id_ e o nome do curso.
 * student_Courses, através desta classe, o estudante terá acesso aos seus cursos.
 * matters, essa classe servirá para guardar as informações das matérias que o aluno irá cursar.
 * notes, essa classe servirá para guardar as informações das notas dos estudantes.
@@ -53,7 +70,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 |Resumo: as disciplinas poderão exibir as notas dos alunos|
 
 |Caso de uso: exibir se o aluno foi aprovado ou não|
-|:--------------------------------------------------------------|
+|:----|
 |Resumo: o sistema poderá exibir se o aluno foi aprovado ou não|
 
 |Caso de uso: exibir relatório de alunos por disciplina|
@@ -62,11 +79,11 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 |Caso de uso: exibir relatório de funcionário|
 |:----|
-|Resumo: o sistema poderá exibir relatórios dos funcionários, sendo eles, professores,coordenadores, e administradores|
+|Resumo: o sistema poderá exibir relatórios dos funcionários, sendo eles, professores, coordenadores, e administradores|
 
 |Caso de uso: exibir relatório de disciplina por curso|
 |:-----|
-|Resumo: o sistema poderá exibir o relatórios das disciplinas contidas em cada curso|
+|Resumo: o sistema poderá exibir o relatório das disciplinas contidas em cada curso|
 
 |Caso de uso: exibir relatório dos aniversariantes do mês|
 |:----|
@@ -89,7 +106,7 @@ export class Users
 }
 ```
 
-A nossa classe user possui como base quatro atributos, sendo estes: id, name, birth_date e sex. A classe user sera exportada para outras classes, desta forma, possibilitando a herança entre as classes.
+A nossa classe user possui como base quatro atributos, sendo estes: _id_, _name_, _birth_date_ e _sex_. A classe user sera exportada para outras classes, desta forma, possibilitando a herança entre as classes.
 
 > _Obs: para que seja possível a importação e exportação entre classes, as mesmas necessitam está em módulo_
 
@@ -145,7 +162,7 @@ for (let i = 0; i < atribute_array.length; i++)
     }
 ```
 
-Com o laço _for_ criado, precisamos criar um controle para salvar os dados do cadastro, para isso, usaremos o operador lógico _if_, esse operador tem como objetivo realizar uma verificação, se o campo for nulo, então preenchê ele com uma _string_  pré-definida anteriormente na classe.
+Com o laço _for_ criado, precisamos criar um controle para salvar os dados do cadastro, para isso, usaremos o operador lógico _if_, esse operador visa realizar uma verificação, se o campo for nulo, então preenchê ele com uma _string_  pré-definida anteriormente na classe.
 
 ```js
 //...
@@ -157,7 +174,7 @@ if (document.getElementById(atribute_array[i]).value == null)
 //...
 ```
 
-Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador sem pré-definição. Assim como visto na condição acima, utilizamos o método _setItem_ para mudarmos o valor do campo dentro do _sessionStorage_,como parâmetro  será utilizado a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_na posição_i_do nosso laço atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método_getElementById_, que utilizará o nosso arranjo na posição_i_para dizer qual o_ID_ do campo em que ele deve retornar o valor.
+Caso o campo não esteja vazio, os dados digitados pelo usuário serão salvos no _sessionStorare_ do navegador sem pré-definição. Assim como visto na condição acima, utilizamos o método _setItem_ para mudarmos o valor do campo dentro do _sessionStorage_, como parâmetro  será utilizado a chave (ID) do campo que queremos salvar e o valor que queremos adicionar. No primeiro parámetro colocaremos o nosso arranjo chamado _atribute_array_na posição_i_do nosso laço atual. No segundo parâmetro utilizaremos os dados digitados pelo usuário, pegando esses dados através do método_getElementById_, que utilizará o nosso arranjo na posição_i_para dizer qual o_ID_ do campo em que ele deve retornar o valor.
 
 ```js
 //...
@@ -171,7 +188,7 @@ else
 
 #### functions show_teacher_registers, show_coordinator_registers, show_administrator_registers
 
-Esta função utiliza uma logica parecida com a função vista a cima. Um laço _for_ percorrendo um _array_ e dentro dele existe uma condição.
+Esta função utiliza uma lógica parecida com a função vista a cima. Um laço _for_ percorrendo um _array_ e dentro dele existe uma condição.
 
 ```js
 function show_teacher_registers()
@@ -187,7 +204,7 @@ function show_teacher_registers()
 }
 ```
 
-Para exibir os professores cadastrados, o operador _if_ irá verificar se o funcionário atual é um professor. Para realizar esta verificação é necessário acessar o objeto no índice atual do arranjo. Dentro deste objeto, é solicitado o atributlo _type_of_employee_, então esse atributo é comparado a nível de *conteúdo* com a palavra _Teacher_. Caso o tipo de funcionário esteja como _Teacher_, a condição irá mostrar um alerta na tela informando o nome do professor.
+Para exibir os professores cadastrados, o operador _if_ irá verificar se o funcionário atual é um professor. Para realizar esta verificação é necessário acessar o objeto no índice atual do arranjo. Dentro deste objeto, é solicitado o atributlo _type_of_employee_, então esse atributo é comparado a nível de *conteúdo* com a palavra _Teacher_. Caso a categoria de funcionário esteja como _Teacher_, a condição irá mostrar um alerta na tela informando o nome do professor.
 
 ```js
 //...
@@ -198,7 +215,7 @@ if(employees_guard[i].type_of_employee === "Teacher")
 //...
 ```
 
-Este mesmo formato de função será utlizado em _show_coordinator_registers_ e _show_administrator_registers_.
+Este mesmo formato de função será utilizado em _show_coordinator_registers_ e _show_administrator_registers_.
 
 ```js
 function show_coordinator_registers()
@@ -306,7 +323,7 @@ Dentro do laço _for_ possui duas variáveis, sendo a primeira responsável por 
 }
 ```
 
-Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_ e passamos o _splitao_ com index _1_ como parâmetro, desta forma o _swtich_ irá escolher sempre o mês do aniversariante e com isso, atribui-lo na variável _birthdays_ e por fim, exibimos está variável com um _window.alert_.
+Logo em seguida chegamos onde as coisas realmente acontecem, criamos um _switch_ e passamos o _splitao_ com índex _1_ como parâmetro, desta forma o _swtich_ irá escolher sempre o mês do aniversariante e com isso, atribui-lo na variável _birthdays_ e por fim, exibimos esta variável com um _window.alert_.
 
 ```js
        switch(splitao[1]) 
@@ -388,7 +405,7 @@ export const employees_guard = [employ1, employ2, employ3,employ4];
 //...
 ```
 
-Com o nosso _array_ de objetos criado, precisamos ouvir quando uma solicitação vier pela parte do usuário e para isso criaremos variáveis responsáveis em "ouvir" as requisições do usuário. Então criaremos cinto variáveis, cada uma pra "ouvir" um _button_ diferente, a primeira será responsável pelo registro, a segunda é para os relatórios dos professores, a terceira é para os relatórios dos coordenadores, a quarta é para os relatórios dos administradores e a última é responsável pelo relatório de aniversariantes do mês.
+Com o nosso _array_ de objeto criado, precisamos ouvir quando uma solicitação vier pela parte do usuário e para isso criaremos variáveis responsáveis em "ouvir" as requisições do usuário. Então criaremos cinco variáveis, cada uma para "ouvir" um _button_ diferente, a primeira será responsável pelo registro, a segunda é para os relatórios dos professores, a terceira é para os relatórios dos coordenadores, a quarta é para os relatórios dos administradores e a última é responsável pelo relatório de aniversariantes do mês.
 
 ```js
 //...
@@ -580,9 +597,9 @@ export class Students extends Users
 //...
 ```
 
-## Funções
+### funções
 
-### function register_students
+#### function register_students
 
 Esta função é bem parecida com a função _register_employees_da classe_employees_, porém sua diferença é nos itens que ela percorre, enquanto a função vista a cima perceorre um arranjo de funcionários, está percorre um de estudantes.
 
@@ -609,7 +626,7 @@ function register_students()
 
 #### function show_students_registers
 
-Como o próprio nome sugere, esta _function_ mostra os estudantes cadastrados.
+Esta _function_ mostra os estudantes cadastrados.
 
 ```js
 //...
@@ -639,7 +656,7 @@ Agora chegamos na parte principal da funcao, um laço _for_ que percorre o _arra
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
-        //implementação 
+        //implementation 
     }
 //...
 ```
@@ -658,7 +675,7 @@ for(let i = 0; i < students_guard.length; i++)
 
 #### function show_notes_registers
 
-Esta função tem como objetivo, exibir ao usuário o relatório das notas dos estudantes. Este relatório, dirá o nome do estudante, dirá se ele foi aprovado ou não, além de mostrar suas notas (n1 e n2).
+Esta função visa exibir ao usuário o relatório das notas dos estudantes. Este relatório, dirá o nome do estudante, dirá se ele foi aprovado ou não, além de mostrar suas notas (n1 e n2).
 
 ```js
 function show_notes_registers() {
@@ -692,7 +709,7 @@ function show_notes_registers() {
 }
 ```
 
-Um laço _for_ irá percorrer todos os objetos _students_ contidos em _students_guard_e quando o laço for finalizado mostrará ao usuário (através de um_window.alert_) o relatorio das notas dos estudantes.
+Um laço _for_ irá percorrer todos os objetos _students_ contidos em _students_guard_e quando o laço for finalizado mostrará ao usuário (através de um_window.alert_) o relatório das notas dos estudantes.
 
 ```js
 //...
@@ -705,7 +722,7 @@ for (let i = 0; i < students_guard.length; i++)
 //...
 ```
 
-Dentro do laço _for_ será realizado várias verificações para saber se o aluno foi aprovado ou não. A primeira verificação busca saber se a média das duas notas é maior ou igual a _7_ se sim, o aluno é salvo com status de _Approved_, se não, o laço irá para o segundo if.
+No laço _for_ será realizado várias verificações para saber se o aluno foi aprovado ou não. A primeira verificação busca saber se a média das duas notas é maior ou igual a _7_ se sim, o aluno é salvo com estado de _Approved_, se não, o laço irá para o segundo if.
 
 ```js
 //...
@@ -719,8 +736,8 @@ if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) >= 
 //...
 ```
 
-A segunda verificação busca saber se a média do aluno está abaixo de _7_ e maior que _4_. Se a média estiver dentro destes limites, o aluno é salvo com um status de _Recovery_
-indicando que ele está de recuperação.
+A segunda verificação busca saber se a média do aluno está abaixo de _7_ e maior que _4_. Se a média estiver dentro destes limites, o aluno é salvo com um estado de _Recovery_
+Indicando que ele está de recuperação.
 
 ```js
  else if (((notes_guard[i].first_assessment + notes_guard[i].second_assessment)/2) < 7.0 &&
@@ -733,7 +750,7 @@ indicando que ele está de recuperação.
         }
 ```
 
-Se a média do aluno não estiver dentro deste limite, ele irá para a opção default, ou seja, caso ele não tenha atendido nenhuma das requisições acima, ele irá cair nesta obrigatoriamente. Por fim, o aluno está com a média abaixo de _4_, então ele será armazenado com um status de _failed.
+Se a média do aluno não estiver dentro deste limite, ele irá para a opção predefinida, ou seja, caso ele não tenha atendido nenhuma das requisições acima, ele irá cair nesta obrigatoriamente. Por fim, o aluno está com a média abaixo de _4_, então ele será armazenado com um estatuto de _failed.
 
 ```js
 else 
@@ -786,7 +803,7 @@ Agora criaremos um laço _for_ que irá percorrer um _array_ de objetos chamado 
 //...
 for(let i = 0; i < students_guard.length; i++)
     {
-        //implementação 
+        //implementation 
     }
 //...
 ```
@@ -818,7 +835,7 @@ Por fim a exibiremos aos usuário a variável _matters_ através do _window.aler
 
 #### function show_birth_days
 
-Esta função é quase a mesma das funções _show_birth_days_ apresentadas acima. O que a diferencia das outras funções apresentadas acima, é no tipo de _array_ que  o laço _for_ estará percorrendo e os dados que ela está guardado na variável _birthdays_.
+Esta função é quase a mesma das funções _show_birth_days_ apresentadas acima. O que a diferencia das outras funções é no tipo de _array_ que  o laço _for_ estará percorrendo e os dados que serão guardados na variável _birthdays_.
 
 ```js
 function show_birth_days()
@@ -873,7 +890,7 @@ function show_birth_days()
 }
 ```
 
-### Constuindo os objetos da classe
+### constuindo os objetos da classe
 
 Primeiramente precisamos criar duas constantes, a primeira será para guardar os _IDs_ referentes aos _inputs_ contidos no _HTML_, a segunda é uma garantia caso o usuário esqueça de preencher algum campo na hora de registrar um estudante.
 
@@ -1112,4 +1129,238 @@ function show_birth_days()
     }
     window.alert(birthdays);
 }
+```
+
+### Classe courses
+
+A classe _courses_ é responsável por disponibilizar os cursos a outras classes.
+
+```js
+class Courses
+{
+    constructor(id, name)
+    {
+        this.id = id;
+        this.name = name
+    }
+}
+//..
+```
+
+#### Construindo os objetos da classe
+
+Antes de exportar precisamos criar os objetos, serão quatro cursos: historia básica, matemática, geografia e inglês básico.
+
+```js
+//..
+var course1 = new Courses("1","basic history I");
+var course2 =  new Courses("2", "basic mathematic I");
+var course3 =  new Courses("2", "basic geography I");
+var course4 =  new Courses("4", "basic english I");
+/..
+```
+
+Após criamos os cursos, precisamos criar um _object_array_ para guardar os cursos e logo em seguida, exportaremos este arranjo.
+
+```js
+//..
+export const courses_guard = [course1,course2,course3,course4];
+```
+
+Este é codígo completo da classe:
+
+```js
+class Courses
+{
+    constructor(id, name)
+    {
+        this.id = id;
+        this.name = name
+    }
+}
+
+var course1 = new Courses("1","basic history I");
+var course2 =  new Courses("2", "basic mathematic I");
+var course3 =  new Courses("2", "basic geography I");
+var course4 =  new Courses("4", "basic english I");
+
+export const courses_guard = [course1,course2,course3,course4];
+```
+
+### Classe notes
+
+Está classe é responsável por gerenciar as notas dos estudantes, para isso, ela utiliza em seu construtor os seguintes parâmetros: _id_,_inscription_id_, first_assessment_,_second_assessment_.
+
+```js
+class Notes 
+{
+    constructor(id, inscription_id, first_assessment, second_assessment)
+    {
+        this.id = id;
+        this.inscription_id = inscription_id; 
+        this.first_assessment = first_assessment;
+        this.second_assessment = second_assessment;
+    }
+}
+//...
+```
+
+#### Construindo os objetos
+
+Iremos criar quatro objetos contendo as _IDs_,_inscriptions_IDs_ e as notas dos estudantes.
+
+```js
+//...
+var notes_students1 = new Notes("1", "1", 8.1, 8);
+var notes_students2 = new Notes("2", "2", 9.3, 9.2);
+var notes_students3 = new Notes("3", "3", 5.5, 10);
+var notes_students4 = new Notes("4","4",8.5,5.1);
+//...
+```
+
+Por fim, criaremos um _array_ para guardas as notas e exportaremos para outras classes.
+
+```js
+//...
+export const notes_guard = [notes_students1,notes_students2,notes_students3,notes_students4];
+```
+
+### Classe inscriptions
+
+A classe inscription é responsável por inscriver os alunos nos cursos, o seu construtor utiliza as _IDs_ de outras classes para possiubilitar este cadastro.
+
+```js
+class Inscriptions
+{
+    constructor (id, course_id, matter_id, student_id, note_id)
+    {
+        this.id = id;
+        this.course_id = course_id;
+        this.matter_id = matter_id;
+        this.student_id = student_id;
+        this.note_id = note_id;
+    }
+}
+//...
+```
+
+#### Construindo objetos da classe
+
+Criaremos quatro inscrições, para os quatro alunos registrados no sistema. Cada objeto utilizara as _IDs_ referentes as outras classes.
+
+```js
+//...
+var inscription1 = new Inscriptions("1","1","1","1","1");
+var inscription2 = new Inscriptions("2","2","2","2","2");
+var inscription3 = new Inscriptions("3","3","3","3","3");
+var inscription4 = new Inscriptions("4","4","4","4","4");
+//...
+```
+
+Por fim, como já é de costume, criaremos um _array_ para guardar todas as nossas inscrições e exportá-las para outra classe.
+
+```js
+//...
+export const inscriptions_guard = [inscription1,inscription2,inscription3,inscription4];
+```
+
+### Classe matters
+
+A classe _matters_ visa permitir o cadastro de matérias/disciplinas, além de exibir o relatório.
+
+```js
+import {notes_guard} from "./notes.js"
+
+class Matters {
+    constructor(id, name, description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+    atribute_array = ["id", "name", "description"];
+    element_array = ["4", "matter4", "Pro matter4"];
+}
+//..
+```
+
+#### Construindo os objetos
+
+Agora precisamos criar as matérias/disciplinas, cada uma possui um _id_, nome e descrição. Então criaremos três matérias predefinidas na classe e deixaremos a quarta para que o usuário possa realizar cadastro de disciplinas.
+
+```js
+//...
+var history = new Matters("0", "History", "The study of the past – specifically the people,"
+    + "societies, events and problems of the past – as well as" 
+    + "our attempts to understand them. It is a pursuit common to all human societies.");
+
+var mathematics = new Matters("1", "Mathematic", "mathematics, the science of structure" 
+    + "order, and relation that has evolved from"
+    + "elemental practices of counting, measuring,"
+    + "and describing the shapes of objects." 
+    + "It deals with logical reasoning and quantitative calculation,"
+    + "and its development has involved an increasing degree of idealization"
+    + "and abstraction of its subject matter.");
+
+var geography = new Matters("2", "Geography", "the study of the world, its physical and"
+    + "social environments, and the dynamic nature of the relationships" 
+    + "among them, from local to global scales.");
+
+var matter4 = new Matters();
+//...
+```
+
+Agora criaremos um _object_array_ para guardar as matérias e exportá-las para outras classes.
+
+```js
+//...
+export const matters_guard = [history,mathematics,geography,matter4];
+//...
+```
+
+Por fim criaremos duas variáveis para guardar os _buttons_ do nosso _HTML_.
+
+```js
+//...
+let button = document.getElementById("matter_register_class");
+let button2 = document.getElementById("quantity_students");
+//...
+```
+
+#### Eventos listener
+
+Para que o nosso sistema salve as informações digitadas pelo usuário, precisamos saber quando o _button_ for pressionado, então realizaremos uma verificação, se o _button_ não for nulo, realize o evento _listener_. A primeira variável botão é responsável pelo evento de registro e a segunda é responsável pelo evento de  exibir o relatório.
+
+```js
+//...
+if(button)
+{
+    button.addEventListener("click",function()
+ {
+     sessionStorage.setItem("id", document.getElementById("id").value);
+     sessionStorage.setItem("name", document.getElementById("name").value);
+     sessionStorage.setItem("description", document.getElementById("description").value);
+
+     matter4 = new Matters(sessionStorage.getItem("id"),sessionStorage.getItem("name"), 
+     sessionStorage.getItem("description"));
+ });
+}
+//...
+```
+
+```js
+//...
+if(button2)
+ {
+    button2.addEventListener("click", function(){
+        let text = "";
+        let count = 0;
+        for(let i = 0; i < notes_guard.length; i++)
+        {
+            count++;
+            text += "first assessment: " +notes_guard[i].first_assessment + "\n" +
+            "second assessment: "+notes_guard[i].second_assessment + "\n";
+        }
+        window.alert(text += "Quantity of students: " + count); 
+     });
+ }
 ```
