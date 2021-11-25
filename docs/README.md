@@ -43,7 +43,7 @@ coordenador de curso e professor) e de disciplinas por curso.
   - [Employees](#employees)
 
 
-## 1.Relatórios
+## Relatórios
 
 ### Diagrama de classe
 
