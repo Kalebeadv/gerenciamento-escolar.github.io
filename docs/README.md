@@ -12,7 +12,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 + #### [Página do projeto](https://github.com/Kalebeadv/gerenciamento-escolar.github.io/tree/main/src)
 
-+ #### [Relatórios](#relatórios)
++ #### [Relatórios](##relatórios)
 
 + #### [Diagrama de classe](#diagrama-de-classe)
 
