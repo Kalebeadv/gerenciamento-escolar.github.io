@@ -14,7 +14,7 @@ coordenador de curso e professor) e de disciplinas por curso.
 
 - [Relatórios](#relatorios)
 
-- #### [Diagrama de classe](#diagrama-de-classe)
+- [Diagrama de classe](#diagrama-de-classe)
 
 - #### [Sobre](#sobre)
 
