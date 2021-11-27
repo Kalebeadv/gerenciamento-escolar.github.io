@@ -42,6 +42,7 @@ coordenador de curso e professor) e de disciplinas por curso.
   - [Students](#students)
   - [Employees](#employees)
 
+- [Referências](#referências)
 
 ## Relatórios
 
@@ -1395,9 +1396,11 @@ if(button2)
 
 ![employee](https://user-images.githubusercontent.com/62080789/143317816-e5684265-30a8-46e7-a3e7-34e2eae9111b.gif)
 
+## Refernêcias 
 
+[Stack overflow](https://stackoverflow.com/)
 
-
+[Guia básico de markdown](https://markdown.net.br/sintaxe-basica/)
 
 
 
